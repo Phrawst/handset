@@ -26,7 +26,7 @@ const handsetSchema = Joi.object({
   }).required(),
 });
 
-const topic = "handsets-created";
+// const topic = "handsets-created";
 const parser = require("body-parser");
 
 // kafkaMiddleWare.initializeKafka();

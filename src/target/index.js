@@ -12,7 +12,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.intitialHandsets = void 0;
 const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const handsets_1 = require("./route/handsets");
@@ -57,4 +56,4 @@ function intitialHandsets() {
         setTimeout(mongoConnect, 5000);
     });
 }
-exports.intitialHandsets = intitialHandsets;
+intitialHandsets();

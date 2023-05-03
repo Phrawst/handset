@@ -50,4 +50,4 @@ app.use("/", route);
       });
   }
 
-  export { intitialHandsets };
+intitialHandsets()
