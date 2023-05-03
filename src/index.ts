@@ -1,7 +1,8 @@
 import express from "express";
 import mongoose, { ConnectOptions } from "mongoose";
 import { route } from "./route/handsets";
-
+ 
+ 
 require("dotenv").config({ path: "./env.env" });
 const winston = require("winston");
 
@@ -19,34 +20,34 @@ const socketTimeoute = 45000;
 app.use(cors());
 app.use("/", route);
 
-async function mongoConnect() {
-  try {
-    const options: ConnectOptions = {
-      bufferCommands: false,
-      connectTimeoutMS: connectionTimeout,
-      socketTimeoutMS: socketTimeoute,
-      family: 4,
-    };
-    await mongoose.connect(
-      `mongodb://${user}:${password}@0.0.0.0:${dbPort}/${dbName}`,
-      options
-    );
-  } catch (error) {
-    throw error;
+  async function mongoConnect() {
+    try {
+      const options: ConnectOptions = {
+        bufferCommands: false,
+        connectTimeoutMS: connectionTimeout,
+        socketTimeoutMS: socketTimeoute,
+        family: 4,
+      };
+      await mongoose.connect(
+        `mongodb://${user}:${password}@0.0.0.0:${dbPort}/${dbName}`,
+        options
+      );
+    } catch (error) {
+      throw error;
+    }
   }
-}
 
-function intitialHandsets() {
-  mongoConnect()
-    .then(() => {
-      app.listen(port, () => {
-        winston.info("Successfully connected to MongoDB.");
+  function intitialHandsets() {
+    mongoConnect()
+      .then(() => {
+        app.listen(port, () => {
+          winston.info("Successfully connected to MongoDB.");
+        });
+      })
+      .catch((error) => {
+        winston.error(`Error connecting to MongoDB: ${error}`);
+        setTimeout(mongoConnect, 5000);
       });
-    })
-    .catch((error) => {
-      winston.error(`Error connecting to MongoDB: ${error}`);
-      setTimeout(mongoConnect, 5000);
-    });
-}
+  }
 
-export { intitialHandsets };
+  export { intitialHandsets };

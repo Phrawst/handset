@@ -7,6 +7,7 @@
     "prebuild": "npx rimraf target",
     "build": "npx tsc",
     "start": "node ./src/target/index.js"
+    
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "kafka-node": "^5.0.0",
     "mongoose": "^7.0.3",
     "rimraf": "^5.0.0",
+    "supertest": "^6.3.3",
     "uglify-js": "^3.17.4",
     "winston": "^3.8.2"
   },

@@ -37,7 +37,7 @@ db.handsets.insertOne({
   "brand": "Samson",
   "model": "Galaxy S21",
   "price": 10000,
-  "discount": "50"
+  "discount": "50%"
   "discounted_price": "5000",
   "color": "Phantom Black",
   "storage": "256 GB",
