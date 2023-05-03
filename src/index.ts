@@ -36,13 +36,17 @@ async function mongoConnect() {
   }
 }
 
-mongoConnect()
-  .then(() => {
-    app.listen(port, () => {
-      winston.info("Successfully connected to MongoDB.");
+function intitialHandsets() {
+  mongoConnect()
+    .then(() => {
+      app.listen(port, () => {
+        winston.info("Successfully connected to MongoDB.");
+      });
+    })
+    .catch((error) => {
+      winston.error(`Error connecting to MongoDB: ${error}`);
+      setTimeout(mongoConnect, 5000);
     });
-  })
-  .catch((error) => {
-    winston.error(`Error connecting to MongoDB: ${error}`);
-    setTimeout(mongoConnect, 5000);
-  });
+}
+
+export { intitialHandsets };

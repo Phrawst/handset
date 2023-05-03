@@ -5,7 +5,7 @@
 1. Create container for mongodb
 
 ~~~
-docker run --rm --name mongodb -p 27017:27017 \
+
         -e MONGO_INITDB_ROOT_USERNAME=mongo \
         -e MONGO_INITDB_ROOT_PASSWORD=passwd \
         -v mongo_volume:/data/db -d mongo
@@ -36,7 +36,9 @@ db.handsets.insertOne({
   "id": "456",
   "brand": "Samson",
   "model": "Galaxy S21",
-  "price": 1099.99,
+  "price": 10000,
+  "discount": "50"
+  "discounted_price": "5000"
   "color": "Phantom Black",
   "storage": "256 GB",
   "spec": {
@@ -44,7 +46,8 @@ db.handsets.insertOne({
     "screen_width": "1080",
     "screen_height": "2400"
   }
-})
+}) 
+
 ~~~
 
 #initial node js
