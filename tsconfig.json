@@ -1,23 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2020",               // Specify the ECMAScript target version
-    "module": "commonjs",             // Specify the module system (commonjs or es2020, etc.)
+    "baseUrl": ".",
     "outDir": "./dist",               // Specify the output directory for compiled files
-    "strict": true,                   // Enable strict type-checking
-//    "esModuleInterop": true,          // Enable compatibility with CommonJS modules
-    "resolveJsonModule": true,        // Enable importing JSON modules
-    "allowImportingTsExtensions": true,
-    "sourceMap": true,                // Generate source maps for better debugging
-    "declaration": true,              // Generate declaration files (*.d.ts)
-    "noUnusedLocals": true,           // Report unused local variables
-    "noUnusedParameters": false,       // Report unused function parameters
-    "noImplicitReturns": true,        // Report missing return statements
-    "moduleResolution": "node",       // Specify module resolution strategy
-    "strictNullChecks": true,         // Enable strict null checks
-    "baseUrl": "./src",               // Specify the base directory for module resolution
-    "paths": {
-      "@/*": ["*"]                    // Define custom module aliases
-    }
+    "module": "CommonJS",
+    "target": "ES2020",
+    "lib": ["ES2020"],
+    "sourceMap": false,
+    "noEmitOnError": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node"
   },
   "include": [
     "src/**/*.ts"                    // Specify the paths to include in compilation

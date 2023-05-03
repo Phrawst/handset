@@ -1,10 +1,13 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = require("express");
-var helmet_1 = require("helmet");
-var cors_1 = require("cors");
+const express_1 = __importDefault(require("express"));
+const helmet_1 = __importDefault(require("helmet"));
+const cors_1 = __importDefault(require("cors"));
 // import routes from '/routes';
-var app = (0, express_1.default)();
+const app = (0, express_1.default)();
 //set security HTTP headers
 app.use((0, helmet_1.default)());
 // set cors

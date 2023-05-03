@@ -1,22 +1,25 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var mongoose_1 = require("mongoose");
-var app_1 = require("./app");
-var server;
-var url = 'mongodb://localhost:27017/db';
-var config = {
+const mongoose_1 = __importDefault(require("mongoose"));
+const app_1 = __importDefault(require("./app"));
+let server;
+const url = 'mongodb://localhost:27017/db';
+const config = {
     autoIndex: true,
     userNewUrlParser: true,
     useUnifiedTopology: true
 };
-mongoose_1.default.connect(url, config).then(function () {
-    server = app_1.default.listen(3000, function () {
+mongoose_1.default.connect(url, config).then(() => {
+    server = app_1.default.listen(3000, () => {
         console.log('Connected to MongoDB...');
     });
 });
-var exitHandler = function () {
+const exitHandler = () => {
     if (server) {
-        server.close(function () {
+        server.close(() => {
             // logger.info('Server closed');
             process.exit(1);
         });
@@ -25,7 +28,7 @@ var exitHandler = function () {
         process.exit(1);
     }
 };
-var unexpectedErrorHandler = function (error) {
+const unexpectedErrorHandler = (error) => {
     // logger.error(error);
     console.log(error);
     exitHandler();

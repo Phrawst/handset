@@ -1,7 +1,7 @@
 import httpStatus from 'http-status';
 import { Request, Response} from "express";
 import catchAsync from "../utils/catchAsync";
-import * as handsetService from "./handset.service.ts";
+import * as handsetService from "./handset.service";
 
 
 export const createHandset = catchAsync(async (req: Request, res: Response) => {
