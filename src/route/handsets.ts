@@ -1,6 +1,6 @@
 import { Handset } from "../model/handsets";
 import { Router } from "express";
-import * as kafkaMiddleWare from "../services/kafkaMiddleWare";
+// import * as kafkaMiddleWare from "../services/kafkaMiddleWare";
 
 const Joi = require("Joi");
 const HANDSET_ERROR_MESSAGES = {
@@ -29,7 +29,7 @@ const handsetSchema = Joi.object({
 const topic = "handsets-created";
 const parser = require("body-parser");
 
-kafkaMiddleWare.initializeKafka();
+// kafkaMiddleWare.initializeKafka();
 const route = Router();
 route.use(parser.json());
 route.use(parser.urlencoded({ extended: true }));
@@ -84,7 +84,7 @@ route.post("/handsets", async (req, res) => {
 
   const existinghandset = await Handset.findOne({ id: id });
   if (!existinghandset) {
-    kafkaMiddleWare.sendHandsetJson(topic, handset.toObject());
+    // kafkaMiddleWare.sendHandsetJson(topic, handset.toObject());
     await handset.save();
     return res.json(handset);
   }
