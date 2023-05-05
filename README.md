@@ -19,11 +19,11 @@ docker exec -it mongodb bash
 mongosh
 ~~~
 4. Authen root user
-4.1 Swith to admin database
+&nbsp;4.1 Swith to admin database
 ~~~
 use admin
 ~~~
-4.2 then use the following command to authen the root user
+&nbsp;4.2 then use the following command to authen the root user
 ~~~
 db.auth("mongo","passwd")
 ~~~
