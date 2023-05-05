@@ -41,13 +41,13 @@ db.createCollection("handsets")
 ~~~
 8. add mock-up data to handsets collection
 ~~~
-db.handsets.insertOne({
-  "id": "456",
+db.handsets.insertMany([{
+  "id": 001,
   "brand": "Samson",
   "model": "Galaxy S21",
   "price": 10000,
-  "discount": "50%"
-  "discounted_price": "5000",
+  "discount": "50%",
+  "discounted_price": 5000,
   "color": "Phantom Black",
   "storage": "256 GB",
   "spec": {
@@ -55,7 +55,67 @@ db.handsets.insertOne({
     "screen_width": "1080",
     "screen_height": "2400"
   }
-}) 
+},
+{
+  "id": 002,
+  "brand": "Samsung",
+  "model": "Galaxy S22",
+  "price": 10000,
+  "discount": "50%",
+  "discounted_price": 5000,
+  "color": "Phantom Black",
+  "storage": "256 GB",
+  "spec": {
+    "display": "Dynamic AMOLED 2X",
+    "screen_width": "1080",
+    "screen_height": "2400"
+  }
+},
+{
+  "id": 003,
+  "brand": "iPhone",
+  "model": "Pro Max",
+  "price": 10000,
+  "discount": "40%",
+  "discounted_price": 6000,
+  "color": "Phantom White",
+  "storage": "256 GB",
+  "spec": {
+    "display": "Dynamic AMOLED 2X",
+    "screen_width": "1080",
+    "screen_height": "2400"
+  }
+},
+{
+  "id": 004,
+  "brand": "Samson",
+  "model": "Galaxy S21",
+  "price": 20000,
+  "discount": "40%",
+  "discounted_price": 16000,
+  "color": "Phantom Black",
+  "storage": "256 GB",
+  "spec": {
+    "display": "Dynamic AMOLED 2X",
+    "screen_width": "1080",
+    "screen_height": "2400"
+  }
+},
+{
+  "id": 005,
+  "brand": "Samson",
+  "model": "Galaxy S21",
+  "price": 10000,
+  "discount": "50%",
+  "discounted_price": 5000,
+  "color": "Phantom Black",
+  "storage": "256 GB",
+  "spec": {
+    "display": "Dynamic AMOLED 2X",
+    "screen_width": "1080",
+    "screen_height": "2400"
+  }
+}]) 
 
 ~~~
 
