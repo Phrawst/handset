@@ -17,20 +17,26 @@ docker exec -it mongodb bash
 3. Access mongodb with mongosh
 ~~~
 mongosh
+4. Authen root user
 ~~~
-4. Create new database
+use admin
+~~~
+~~~
+db.auth("mongo","passwd")
+~~~
+5. Create new database
 ~~~
 use warehouse
 ~~~
-5. Add user to warehouse database
+6. Add user to warehouse database
 ~~~
 db.createUser({user : "test",pwd: "1234",roles: [ { role: "readWrite", db:"warehouse"}]})
 ~~~
-6. Create new collection named "handsets"
+7. Create new collection named "handsets"
 ~~~
 db.createCollection("handsets")
 ~~~
-7. add mock-up data to handsets collection
+8. add mock-up data to handsets collection
 ~~~
 db.handsets.insertOne({
   "id": "456",
