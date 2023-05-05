@@ -21,7 +21,6 @@ mongosh
 ~~~
 use admin
 ~~~
-~~~
 db.auth("mongo","passwd")
 ~~~
 5. Create new database
