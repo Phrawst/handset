@@ -17,9 +17,12 @@ docker exec -it mongodb bash
 3. Access mongodb with mongosh
 ~~~
 mongosh
+~~~
 4. Authen root user
 ~~~
 use admin
+~~~
+then
 ~~~
 db.auth("mongo","passwd")
 ~~~
