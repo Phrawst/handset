@@ -18,7 +18,7 @@ docker exec -it mongodb bash
 ~~~
 mongosh
 ~~~
-4. Authen root user
+4. Authen root user\
 &nbsp;4.1 Swith to admin database
 ~~~
 use admin
