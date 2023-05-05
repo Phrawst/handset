@@ -22,7 +22,7 @@ mongosh
 ~~~
 use admin
 ~~~
-   then use the following command to authen root user
+   then use the following command to authen the root user
 ~~~
 db.auth("mongo","passwd")
 ~~~
